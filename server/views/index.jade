@@ -1,0 +1,19 @@
+extends layout
+
+block vars
+ - var title = "Index Page"
+
+block content
+  h1 Login to your Account
+  if error
+    p ERROR: #{error}
+  p Welcome to #{title}
+  form(action="/" method="post")
+    p username
+    input(name="username" type="text" required="true")
+    p password
+    input(name="password" type="password" required="true")
+    input(type="hidden" name="_csrf" value=csrfToken)
+    input(type="submit" value="login")
+  p Please #[a(href="/register") register] if you don't already have an account
+  script(src="/javascripts/script.js").

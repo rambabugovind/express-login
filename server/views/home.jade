@@ -1,0 +1,10 @@
+extends layout
+
+block vars
+    - var title = "Home"
+
+block content
+    h1 Welcome Home!
+    h2 Hello #{user.username}
+    a(href='/logout') Logout
+    //- #[a(href='/logout')Logout]

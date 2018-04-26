@@ -1,0 +1,22 @@
+extends layout
+
+block vars
+    - var title = "Registration"
+
+block content
+    h1= title
+    p Welcome to #{title}
+    if error
+        p ERROR: #{error}
+    form(action="/register" method="post")
+        p email
+        input(name="email" type="text" required="true")
+        p username
+        input(name="username" type="text" required="true")
+        p password
+        input(name="password" type="password" required="true")
+        p password confirm
+        input(name="passwordConf" type="password" required="true")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        input(type="submit" value="Register")
+  script(src="/javascripts/script.js")
