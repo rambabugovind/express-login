@@ -1,3 +1,5 @@
+//https://express-login-134.herokuapp.com
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,7 +10,7 @@ const csurf = require('csurf');
 //mongodb driver -> mongoose
 const mongoose = require('mongoose');
 let user = require('./db_models/user-model');
-let uri = 'mongodb://rxg6164:mulsanne%40383061@ds115758.mlab.com:15758/user';
+let uri = 'mongodb://user:password@ds115758.mlab.com:15758/user';//custom user password
 //open a connection to the 'test' database on our locally running instance of MongoDB.
 mongoose.connect(uri);
 
